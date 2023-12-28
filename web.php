@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ImageController;
+use App\Http\Controllers\ApiController;
 
 
 
@@ -21,5 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/upload', [ImageController::class, 'upload']);
-
+Route::get('/users', [ApiController::class, 'getUsers']);
+Route::get('/user/{id}', [ApiController::class, 'getUser']);
+// Add more routes for other API endpoints
